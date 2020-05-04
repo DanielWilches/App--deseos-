@@ -1,0 +1,14 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title class="ion-text-capitalize  ion ion-text-center"> pendientes </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <app-card-items [terminada]="false" class="ion-margin-bottom"></app-card-items>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="agregarLista()" color="tertiary">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

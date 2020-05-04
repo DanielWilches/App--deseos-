@@ -1,0 +1,26 @@
+<ion-card *ngFor="let lista of deseos.listas|filtrolist: terminada ; let index = index;" class="animated fadeInDown">
+    <ion-item-sliding>
+        <ion-item-options side="start">
+            <ion-item-option color="success" (click)="editarItem(index)">
+                <ion-icon slot="icon-only" name="receipt-sharp"></ion-icon>
+            </ion-item-option>
+        </ion-item-options>
+
+        <ion-item (click)="listaSelccionada(lista)">
+            <ion-label>
+                <ion-card-header>
+                    <ion-card-subtitle> {{ lista.creadaEN |date }} </ion-card-subtitle>
+                    <ion-card-title> {{ lista.titulo }} </ion-card-title>
+                </ion-card-header>
+            </ion-label>
+            <ion-note *ngIf="lista.items.length > 0" slot="end" color="tertiary" class="ion-text-capitalize"> # tareas {{ lista.items.length }} </ion-note>
+        </ion-item>
+
+
+        <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="borrarItem(index)">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-item-option>
+        </ion-item-options>
+    </ion-item-sliding>
+</ion-card>
